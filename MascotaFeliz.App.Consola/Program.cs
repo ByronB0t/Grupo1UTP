@@ -8,10 +8,19 @@ namespace MascotaFeliz.App.Consola
     class Program
     {
         private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
+        private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+        private static IRepositorioMascota _repoMascota = new RepositorioMascota (new Persistencia.AppContext());
+        
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            AddDueno();
+            //AddDueno();
+            //BuscarDueno(1);
+            //ListarDuenos();  
+            //AddVeterinario();
+            //AddMascota();
+            //ListarMascotas();
+            
         }
         private static void AddDueno()
         {
@@ -25,6 +34,62 @@ namespace MascotaFeliz.App.Consola
                 Correo = "juansinmiedo@gmail.com"
             };
             _repoDueno.AddDueno(dueno);
+        }
+    
+
+   
+        private static void AddVeterinario()
+        {
+            var veterinario = new Veterinario
+            {
+                //Cedula = "1212",
+                Nombres = "Pepito",
+                Apellidos = "Perez",
+                Direccion = "La lomita",
+                Telefono = "777",
+                TarjetaProfesional = "999999"
+            };
+            _repoVeterinario.AddVeterinario(veterinario);
+        }
+
+        private static void AddMascota()
+        {
+            var mascota = new Mascota
+            {
+                Nombre = "Coco",
+                Color = "Gris",
+                Especie = "Perro",
+                Raza = "Chitsu"
+                
+            };
+            _repoMascota.AddMascota(mascota);
+        }
+
+
+        private static void BuscarDueno(int idDueno)
+        {
+            var dueno = _repoDueno.GetDueno(idDueno);
+            Console.WriteLine(dueno.Id + " " + dueno.Nombres + 
+            " " + dueno.Apellidos + " " 
+            + dueno.Direccion + " " + dueno.Telefono + " " + dueno.Correo);
+        }
+
+        private static void ListarDuenos()
+        {
+            var duenos = _repoDueno.GetAllDuenos();
+            foreach (Dueno d in duenos)
+            {
+                Console.WriteLine(d.Nombres + " " + d.Apellidos);
+            }
+        }
+
+        private static void ListarMascotas()
+        {
+            var mascotas = _repoMascota.GetAllMascotas();
+            foreach (Mascota d in mascotas)
+            {
+                Console.WriteLine(d.Nombre + " " + d.Raza);
+            }
         }
     }
 }
