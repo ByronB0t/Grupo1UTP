@@ -9,18 +9,26 @@ namespace MascotaFeliz.App.Consola
     {
         private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+<<<<<<< HEAD
         private static IRepositorioMascota _repoMascota = new RepositorioMascota (new Persistencia.AppContext());
         
+=======
+>>>>>>> 010c81019b6f0397113eb89126416ab8053b9530
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             //AddDueno();
+<<<<<<< HEAD
             //BuscarDueno(1);
             //ListarDuenos();  
             //AddVeterinario();
             //AddMascota();
             //ListarMascotas();
             
+=======
+            AddVeterinario();
+
+>>>>>>> 010c81019b6f0397113eb89126416ab8053b9530
         }
         private static void AddDueno()
         {
@@ -35,13 +43,17 @@ namespace MascotaFeliz.App.Consola
             };
             _repoDueno.AddDueno(dueno);
         }
+<<<<<<< HEAD
     
 
    
+=======
+>>>>>>> 010c81019b6f0397113eb89126416ab8053b9530
         private static void AddVeterinario()
         {
             var veterinario = new Veterinario
             {
+<<<<<<< HEAD
                 //Cedula = "1212",
                 Nombres = "Pepito",
                 Apellidos = "Perez",
@@ -91,5 +103,16 @@ namespace MascotaFeliz.App.Consola
                 Console.WriteLine(d.Nombre + " " + d.Raza);
             }
         }
+=======
+                //Cedula = "121212",
+                Nombres = "Pepito",
+                Apellidos = "Garcia",
+                Direccion = "En las nubes",
+                Telefono = "546554",
+                TarjetaProfesional = "tj456521"
+            };
+            _repoVeterinario.AddVeterinario(veterinario);
+        }
+>>>>>>> 010c81019b6f0397113eb89126416ab8053b9530
     }
 }
