@@ -80,3 +80,8 @@ C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\bin\Debug\netcoreapp3.1\M
 C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\bin\Debug\netcoreapp3.1\MascotaFeliz.App.Dominio.pdb
 C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\bin\Debug\netcoreapp3.1\MascotaFeliz.App.Persistencia.pdb
 C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Duenos\ListaDuenos.cshtml.g.cs
+C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\ListaMascotas.cshtml.g.cs
+C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\ListaVeterinarios.cshtml.g.cs
+C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Duenos\DetalleDuenos.cshtml.g.cs
+C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\DetalleMascotas.cshtml.g.cs
+C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\DetalleVeterinarios.cshtml.g.cs
