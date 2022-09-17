@@ -6,18 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MascotaFeliz.App.Dominio;
 using MascotaFeliz.App.Persistencia;
-//CambiosPrueba
+
 namespace MascotaFeliz.App.Frontend.Pages
 {
-    public class ListaDuenosModel : PageModel
+    public class ListaMascotasModel : PageModel
     {
-        private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
+        private static IRepositorioMascota _repoMascota = new RepositorioMascota (new Persistencia.AppContext());
 
-        public IEnumerable<Dueno> listaDuenos{get;set;}
+        public IEnumerable<Mascota> listaMascotas{get;set;}
         
         public void OnGet()
         {
-            listaDuenos = _repoDueno.GetAllDuenos();
+            listaMascotas = _repoMascota.GetAllMascotas();
         }
     }
 }

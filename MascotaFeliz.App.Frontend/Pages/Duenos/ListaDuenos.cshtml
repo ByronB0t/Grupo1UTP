@@ -3,4 +3,23 @@
 @{
 }
 <h1>Lista de Dueños</h1>
-<h2>Aquí va la Lista de...</h2>
+<table class = "table">
+    @foreach (var dueno in Model.listaDuenos)
+    {
+
+    <tr>
+        <td>@dueno.Nombres</td>
+        <td>@dueno.Apellidos</td>
+        <td>@dueno.Direccion</td>
+        <td>@dueno.Telefono</td>
+        <td>@dueno.Correo</td>
+
+        <td>
+            <a class = "btn btn-primary table-btn" asp-page="./DetalleDuenos" asp-route-duenoId="@dueno.Id">
+            Detalle Dueno
+            </a>  
+                    
+        </td>
+    </tr>
+    }
+</table>
