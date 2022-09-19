@@ -104,7 +104,7 @@ namespace MascotaFeliz.App.Consola
             }
         }
 =======
-                //Cedula = "121212",
+                Cedula = "121212",
                 Nombres = "Pepito",
                 Apellidos = "Garcia",
                 Direccion = "En las nubes",

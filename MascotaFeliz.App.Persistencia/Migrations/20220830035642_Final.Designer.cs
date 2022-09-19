@@ -81,7 +81,7 @@ namespace MascotaFeliz.App.Persistencia.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-
+                   
                     b.Property<string>("Apellidos")
                         .HasColumnType("nvarchar(max)");
 

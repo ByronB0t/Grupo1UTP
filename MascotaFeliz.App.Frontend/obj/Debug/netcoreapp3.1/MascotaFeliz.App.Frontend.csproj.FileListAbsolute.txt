@@ -85,3 +85,6 @@ C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\R
 C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Duenos\DetalleDuenos.cshtml.g.cs
 C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\DetalleMascotas.cshtml.g.cs
 C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\DetalleVeterinarios.cshtml.g.cs
+C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Duenos\EditarDuenos.cshtml.g.cs
+C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\EditarMascotas.cshtml.g.cs
+C:\Mascotas\MascotaFeliz.App\MascotaFeliz.App.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\EditarVeterinarios.cshtml.g.cs
