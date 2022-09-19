@@ -7263,19 +7263,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bbotina\\.nuget\\packages\\": {}
+    "C:\\Users\\ESTUDIANTE-M\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
+      "projectUniqueName": "D:\\GITUPT81\\Grupo1UTP\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
       "projectName": "MascotaFeliz.App.Persistencia",
-      "projectPath": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
-      "packagesPath": "C:\\Users\\bbotina\\.nuget\\packages\\",
-      "outputPath": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Persistencia\\obj\\",
+      "projectPath": "D:\\GITUPT81\\Grupo1UTP\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
+      "packagesPath": "C:\\Users\\ESTUDIANTE-M\\.nuget\\packages\\",
+      "outputPath": "D:\\GITUPT81\\Grupo1UTP\\MascotaFeliz.App.Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bbotina\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ESTUDIANTE-M\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -7286,8 +7286,8 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj": {
-              "projectPath": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj"
+            "D:\\GITUPT81\\Grupo1UTP\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj": {
+              "projectPath": "D:\\GITUPT81\\Grupo1UTP\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj"
             }
           }
         }
@@ -7337,7 +7337,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.422\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.423\\RuntimeIdentifierGraph.json"
       }
     }
   }
