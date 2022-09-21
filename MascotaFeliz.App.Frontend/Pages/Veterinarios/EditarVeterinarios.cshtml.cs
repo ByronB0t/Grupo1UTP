@@ -12,19 +12,19 @@ namespace MascotaFeliz.App.Frontend.Pages
 {
     public class EditarVeterinariosModel : PageModel
     {
-        private readonly IRepositorioVeterinario _repoDeuno;
+        private readonly IRepositorioVeterinario _repoVeterinario;
         [BindProperty]
         public Veterinario veterinario {get;set;}
         
         public EditarVeterinariosModel()
         {
-            this._repoDeuno = new RepositorioVeterinario(new Persistencia.AppContext());
+            this._repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
         }
         public IActionResult OnGet(int? veterinarioId)
         {
             if (veterinarioId.HasValue)
             {
-                veterinario = _repoDeuno.GetVeterinario(veterinarioId.Value);
+                veterinario = _repoVeterinario.GetVeterinario(veterinarioId.Value);
             }
             else
             {
@@ -46,11 +46,11 @@ namespace MascotaFeliz.App.Frontend.Pages
             }
             if (veterinario.Id>0)
             {
-                veterinario = _repoDeuno.UpdateVeterinario(veterinario);
+                veterinario = _repoVeterinario.UpdateVeterinario(veterinario);
             }
             else
             {
-                _repoDeuno.AddVeterinario(veterinario);
+                _repoVeterinario.AddVeterinario(veterinario);
             }
             return Page();
         }

@@ -1,0 +1,15 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DetalleHistoriasModel
+@{
+}
+<h1>Detalles de la Historia</h1>
+
+<div>
+    Id: @Model.historia.Id
+</div>
+<div>
+    Fecha: @Model.historia.FechaInicial
+</div>
+
+
+<a asp-page="./ListaHistorias" class= "btn-default">Lista de Historias</a>

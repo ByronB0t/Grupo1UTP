@@ -1,0 +1,33 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaHistoriasModel
+@{
+}
+<h1>Lista de Historias</h1>
+<table class = "table">
+    @foreach (var historia in Model.listaHistorias)
+    {
+
+    <tr>
+        
+        <td>@historia.Id</td>
+        <td>@historia.FechaInicial</td>
+        
+
+        <td>
+            <a class = "btn btn-primary table-btn" asp-page="./DetalleHistorias" asp-route-historiaId="@historia.Id">
+            Detalle Historia
+            </a>  
+                    
+        </td>
+        <td>
+            <a class = "btn btn-primary table-btn" asp-page="./EditarHistorias" asp-route-historiaId="@historia.Id">
+            Editar Historia
+            </a>  
+                    
+        </td>
+    </tr>
+    
+    }
+</table>
+<a class = "btn btn-primary table-btn" asp-page="./EditarHistorias" class= "btn-default">Adicionar Historia</a>
+

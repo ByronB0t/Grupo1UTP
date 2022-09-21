@@ -12,19 +12,19 @@ namespace MascotaFeliz.App.Frontend.Pages
 {
     public class EditarDuenosModel : PageModel
     {
-        private readonly IRepositorioDueno _repoDeuno;
+        private readonly IRepositorioDueno _repoDueno;
         [BindProperty]
         public Dueno dueno {get;set;}
         
         public EditarDuenosModel()
         {
-            this._repoDeuno = new RepositorioDueno(new Persistencia.AppContext());
+            this._repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         }
         public IActionResult OnGet(int? duenoId)
         {
             if (duenoId.HasValue)
             {
-                dueno = _repoDeuno.GetDueno(duenoId.Value);
+                dueno = _repoDueno.GetDueno(duenoId.Value);
             }
             else
             {
@@ -46,11 +46,11 @@ namespace MascotaFeliz.App.Frontend.Pages
             }
             if (dueno.Id>0)
             {
-                dueno = _repoDeuno.UpdateDueno(dueno);
+                dueno = _repoDueno.UpdateDueno(dueno);
             }
             else
             {
-                _repoDeuno.AddDueno(dueno);
+                _repoDueno.AddDueno(dueno);
             }
             return Page();
         }
