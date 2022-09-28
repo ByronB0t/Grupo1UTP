@@ -113,6 +113,21 @@ namespace MascotaFeliz.App.Persistencia
             }
             return null;
 
+        }
+        public Historia AsignarHistoria(int idMascota, int idHistoria)
+        {
+            var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
+            if (mascotaEncontrado != null)
+            {
+                var historiaEncontrado = _appContext.Historias.FirstOrDefault(v => v.Id == idHistoria);
+                if (historiaEncontrado != null)
+                {
+                    mascotaEncontrado.Historia = historiaEncontrado;
+                    _appContext.SaveChanges();
+                }
+                return historiaEncontrado;
+            }
+            return null;
         }         
     }
 }

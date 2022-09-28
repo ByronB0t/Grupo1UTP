@@ -7,24 +7,37 @@ namespace MascotaFeliz.App.Consola
 {
     class Program
     {
-        private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
+         private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
-        private static IRepositorioMascota _repoMascota = new RepositorioMascota (new Persistencia.AppContext());
+        private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
         private static IRepositorioHistoria _repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
-        private static IRepositorioVisitaPyP _repoVistitaPyP = new RepositorioVisitaPyP(new Persistencia.AppContext())
+        private static IRepositorioVisitaPyP _repoVisitaPyP = new RepositorioVisitaPyP(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            //ListarDuenosFiltro();      
             //AddDueno();
-
             //BuscarDueno(1);
-            //ListarDuenos();  
+            
+            //ListarDuenos();
+
+            //ListarVeterinariosFiltro();
             //AddVeterinario();
+            //BuscarVeterinario(1);
+            //BuscarMascota(1);
+
             //AddMascota();
-            //ListarMascotas();
             //AsignarVeterinario();
-            AsignarDueno();
+            //AsignarDueno();
+            //AsignarHistoria();
+
+            //ListarMascotas();
+            //ListarHistorias();
+            
+            //AddHistoria();
+            //AsignarVisitaPyP(2);
+            //ListarMascotas();
                         
 
 
@@ -113,7 +126,42 @@ namespace MascotaFeliz.App.Consola
             Console.WriteLine(dueno.Nombres + " " + dueno.Apellidos);
         }
 
+        
+        private static void AsignarHistoria()
+        {
+            var historia = _repoMascota.AsignarHistoria(1,1);
+        }
+
+        private static void AddHistoria()
+        {
+            var historia = new Historia
+            {
+                FechaInicial = new DateTime(2020, 01, 01)
+                
+
+            };
+            _repoHistoria.AddHistoria(historia);
+        }
+
+        private static void AsignarVisitaPyP(int idHistoria)
+        {
+            var historia = _repoHistoria.GetHistoria(idHistoria);
+            if (historia != null)
+            {
+                if (historia.VisitasPyP != null)
+                {
+                    historia.VisitasPyP.Add(new VisitaPyP { FechaVisita = new DateTime(1000, 09, 21), Temperatura = 38.0F, Peso = 30.0F, FrecuenciaRespiratoria = 71.0F, FrecuenciaCardiaca = 71.0F, EstadoAnimo = "Muy cansón", IdVeterinario = 123, Recomendaciones = "Dieta extrema"});
+                }
+                else
+                {
+                    historia.VisitasPyP = new List<VisitaPyP>{
+                        new VisitaPyP{FechaVisita = new DateTime(2000, 01, 01), Temperatura = 38.0F, Peso = 30.0F, FrecuenciaRespiratoria = 71.0F, FrecuenciaCardiaca = 71.0F, EstadoAnimo = "Muy cansón", IdVeterinario = 123, Recomendaciones = "Dieta extrema" }
+                    };
+                }
+                _repoHistoria.UpdateHistoria(historia);
+            }
+
     }
 
-}
-            
+    }
+}            
