@@ -1,0 +1,43 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditarMascotasModel
+@{
+    
+}
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="~/css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+<h1 style="text-shadow: 4px 4px 2px rgba(50, 168, 82,0.45);">Agregar o Editar Mascotas</h1>
+
+<form method="post" >
+<input type="hidden" asp-for = "mascota.Id" />
+
+<table class="blueTable">
+<tr><td><label asp-for="mascota.Nombre"></label></td><td><input asp-for="mascota.Nombre" class="form-control"></td></tr>
+<tr><td width="200" nowrap><label asp-for="mascota.Color"></label></td><td width="200" nowrap><input asp-for="mascota.Color" class="form-control"></td></tr>
+<tr><td><label asp-for="mascota.Raza"></label></td><td><input asp-for="mascota.Raza" class="form-control"></td></tr>
+<tr><td><label asp-for="mascota.Especie"></label></label></td><td><input asp-for="mascota.Especie" class="form-control"></td></tr>
+<tr><td><label for="dueno">Dueño </label><label for="veterinario">// Veterinario</label></td><td>        <select id="dueno" asp-for="mascota.Dueno.Id" name = "duenoId">
+            <option value="0">Seleccione un Dueño</option>
+            @foreach (var dueno in Model.listaDuenos)
+            {
+                <option value="@dueno.Id">@dueno.Id @dueno.Nombres @dueno.Apellidos</option>
+            }
+        </select> <select id="veterinario" asp-for="mascota.Veterinario.Id" name = "veterinarioId">
+            <option value="0">Seleccione un Veterinario</option>
+            @foreach (var veterinario in Model.listaVeterinarios)
+            {
+                <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos</option>
+            }
+        </select></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td><button type="submit" class="btn btn-info btn-sm">Grabar</button>       <a asp-page="./ListaMascotas" class="btn btn-success btn-sm">Lista de Mascotas </a></td></tr>
+</table>
+</form>
+</body>
+</html>

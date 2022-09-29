@@ -119,7 +119,7 @@ namespace MascotaFeliz.App.Persistencia.Migrations
                     b.Property<float>("FrecuenciaCardiaca")
                         .HasColumnType("real");
 
-                    b.Property<float>("FrecuenciaRespiratoria")
+                    b.Property<float>("FrecuenciaRespitaria")
                         .HasColumnType("real");
 
                     b.Property<int?>("HistoriaId")
@@ -188,13 +188,13 @@ namespace MascotaFeliz.App.Persistencia.Migrations
             modelBuilder.Entity("MascotaFeliz.App.Dominio.VisitaPyP", b =>
                 {
                     b.HasOne("MascotaFeliz.App.Dominio.Historia", null)
-                        .WithMany("VisitasPyP")
+                        .WithMany("VisitaPyP")
                         .HasForeignKey("HistoriaId");
                 });
 
             modelBuilder.Entity("MascotaFeliz.App.Dominio.Historia", b =>
                 {
-                    b.Navigation("VisitasPyP");
+                    b.Navigation("VisitaPyP");
                 });
 #pragma warning restore 612, 618
         }

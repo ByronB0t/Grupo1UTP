@@ -1,0 +1,28 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DetallesMascotasModel
+@{
+}
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="~/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+<h1 style="text-shadow: 4px 4px 2px rgba(50, 168, 82,0.45);">Detalle de la Mascota</h1>
+
+<table class="blueTable">
+<tr><td width="200" nowrap>Id Mascota</td><td width="200" nowrap>@Model.mascota.Id</td></tr>
+<tr><td width="200" nowrap>Nombre</td><td width="200" nowrap>@Model.mascota.Nombre</td></tr>
+<tr><td width="200" nowrap>Color</td><td width="200" nowrap>@Model.mascota.Color</td></tr>
+<tr><td width="200" nowrap>Raza</td><td width="200" nowrap>@Model.mascota.Raza</td></tr>
+<tr><td width="200" nowrap>Especie</td><td width="200" nowrap>@Model.mascota.Especie</td></tr>
+<tr><td width="200" nowrap>Cedula del Dueño</td><td width="200" nowrap>@Model.mascota.Dueno.Id</td></tr>
+<tr><td width="200" nowrap>Nombre del Dueño</td><td width="200" nowrap>@Model.mascota.Dueno.Nombres</td></tr>
+<tr><td width="200" nowrap>Nombre del Veterinario</td><td width="200" nowrap>@Model.mascota.Veterinario.Nombres</td></tr>
+</table>
+<p></p><a asp-page="./ListaMascotas" class="btn btn-info active"><i class="fas fa-paw"></i> Lista de Mascotas </a>
+</body>
+</html>
