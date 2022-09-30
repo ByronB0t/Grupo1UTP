@@ -3,26 +3,28 @@
 @{
     int duenoId = Model.dueno.Id;
 }
-
-<h2>Agregar o editar Dueño</h2>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="~/css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+<h1 style="text-shadow: 4px 4px 2px rgba(50, 168, 82,0.45);">Agregar o editar dueños</h1>
 
 <form method="post">
-    <div class "form-group">
-        <input type="hidden" asp-for = "dueno.Id" />
-        <label asp-for= "dueno.Nombres"></label>
-        <input asp-for= "dueno.Nombres"class="form-control">
-        <label asp-for= "dueno.Apellidos"></label>
-        <input asp-for= "dueno.Apellidos"class="form-control">
-        <label asp-for= "dueno.Direccion"></label>
-        <input asp-for= "dueno.Direccion"class="form-control">
-        <label asp-for= "dueno.Telefono"></label>
-        <input asp-for= "dueno.Telefono"class="form-control">
-        <label asp-for= "dueno.Correo"></label>
-        <input asp-for= "dueno.Correo"class="form-control">
-
-        <button type="submit" class "btn btn-primary">Grabar</button>
-    </div>
-
+<input type="hidden" asp-for = "dueno.Id"/>
+<table class="blueTable">
+<tr><td><label asp-for ="dueno.Id">Identificación</label></td><td><input readonly asp-for ="dueno.Id" class = "form-control"></td></tr>
+<tr><td width="200" nowrap><label asp-for ="dueno.Nombres"></label></td><td width="200" nowrap><input asp-for ="dueno.Nombres" class = "form-control"></td></tr>
+<tr><td> <label asp-for ="dueno.Apellidos"></label></td><td><input asp-for ="dueno.Apellidos" class = "form-control"></td></tr>
+<tr><td> <label asp-for ="dueno.Direccion"></label></td><td><input asp-for ="dueno.Direccion" class = "form-control"></td></tr>
+<tr><td><label asp-for ="dueno.Telefono"></label></td><td><input asp-for ="dueno.Telefono" class = "form-control"></td></tr>
+<tr><td><label asp-for ="dueno.Correo"></label></td><td><input asp-for ="dueno.Correo" class = "form-control"></td></tr>
+<tr><td></td><td><button type="submit" class="btn btn-info btn-sm">Grabar</button>       <a asp-page="./ListaDuenos" class="btn btn-success btn-sm">Lista Duenos</a></td></tr>
+</table>
 </form>
-
-<a asp-page="./ListaDuenos" class="btn-default">Lista de Dueños</a>
+</body>
+</html>

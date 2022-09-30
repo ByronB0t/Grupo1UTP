@@ -1,0 +1,27 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DetallesDuenosModel
+@{
+}
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="~/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+<h1 style="text-shadow: 4px 4px 2px rgba(50, 168, 82,0.45);">Detalles del Dueño</h1>
+
+<table class="blueTable">
+<tr><td width="200" nowrap>Identificación</td><td width="200" nowrap>@Model.dueno.Id</td></tr>
+<tr><td width="200" nowrap>Nombre</td><td width="200" nowrap>@Model.dueno.Nombres</td></tr>
+<tr><td width="200" nowrap>Apellido</td><td width="200" nowrap>@Model.dueno.Apellidos</td></tr>
+<tr><td width="200" nowrap>Direccion</td><td width="200" nowrap>@Model.dueno.Direccion</td></tr>
+<tr><td width="200" nowrap>Telefono</td><td width="200" nowrap>@Model.dueno.Telefono</td></tr>
+<tr><td width="200" nowrap>Correo</td><td width="200" nowrap>@Model.dueno.Correo</td></tr>
+</table>
+<p></p>
+<a asp-page="./ListaDuenos" class="btn btn-info active"><i class="fas fa-user"></i> Lista de Dueños </a>
+</body>
+</html>

@@ -9,10 +9,10 @@ namespace MascotaFeliz.App.Persistencia
     public interface IRepositorioHistoria
     {
         IEnumerable<Historia> GetAllHistorias();
-        Historia AddHistoria(Historia historia);
-        Historia UpdateHistoria(Historia historia);
+        Historia AddHistoria(Historia Historia);
+        Historia UpdateHistoria(Historia Historia);
         void DeleteHistoria(int idHistoria);
         Historia GetHistoria(int idHistoria);
-        IEnumerable<VisitaPyP> GetVisitasHistoria(int idHistoria);
+        IEnumerable<Historia> GetHistoriasPorFiltro(string filtro);
     }
 }

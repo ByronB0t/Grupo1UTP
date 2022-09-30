@@ -32,16 +32,29 @@ namespace MascotaFeliz.App.Persistencia
 
         public void DeleteHistoria(int idHistoria)
         {
-            var historiaEncontrado = _appContext.Historias.FirstOrDefault(d => d.Id == idHistoria);
-            if (historiaEncontrado == null)
+            var HistoriaEncontrado = _appContext.Historias.FirstOrDefault(d => d.Id == idHistoria);
+            if (HistoriaEncontrado == null)
                 return;
-            _appContext.Historias.Remove(historiaEncontrado);
+            _appContext.Historias.Remove(HistoriaEncontrado);
             _appContext.SaveChanges();
         }
 
        public IEnumerable<Historia> GetAllHistorias()
         {
             return GetAllHistorias_();
+        }
+
+        public IEnumerable<Historia> GetHistoriasPorFiltro(string filtro)
+        {
+            var historias = GetAllHistorias(); // Obtiene todos los saludos
+            if (historias != null)  //Si se tienen saludos
+            {
+                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
+                 {
+                    //historias = historias.Where(s => s.Id.Contains(filtro));
+                }
+            }
+            return historias;
         }
 
         public IEnumerable<Historia> GetAllHistorias_()
@@ -54,22 +67,13 @@ namespace MascotaFeliz.App.Persistencia
             return _appContext.Historias.FirstOrDefault(d => d.Id == idHistoria);
         }
 
-        IEnumerable<VisitaPyP> IRepositorioHistoria.GetVisitasHistoria(int idHistoria)
-        {
-            var historia = _appContext.Historias.Where(h => h.Id== idHistoria)
-                                                .Include(h => h.VisitasPyP)
-                                                .FirstOrDefault();
-            return historia.VisitasPyP;
-        }
-
         public Historia UpdateHistoria(Historia historia)
         {
             var historiaEncontrado = _appContext.Historias.FirstOrDefault(d => d.Id == historia.Id);
             if (historiaEncontrado != null)
             {
-                historiaEncontrado.Id = historia.Id;
                 historiaEncontrado.FechaInicial = historia.FechaInicial;
-                historiaEncontrado.VisitasPyP = historia.VisitasPyP;                    
+                //historiaEncontrado.VisitaPyP = historia.Color;
                 _appContext.SaveChanges();
             }
             return historiaEncontrado;

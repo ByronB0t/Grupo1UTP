@@ -7,19 +7,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using MascotaFeliz.App.Dominio;
 using MascotaFeliz.App.Persistencia;
 
-
 namespace MascotaFeliz.App.Frontend.Pages
 {
     public class EditarVeterinariosModel : PageModel
     {
         private readonly IRepositorioVeterinario _repoVeterinario;
         [BindProperty]
-        public Veterinario veterinario {get;set;}
-        
+        public Veterinario veterinario { get; set; }
+
         public EditarVeterinariosModel()
         {
             this._repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
         }
+        
         public IActionResult OnGet(int? veterinarioId)
         {
             if (veterinarioId.HasValue)
@@ -28,7 +28,7 @@ namespace MascotaFeliz.App.Frontend.Pages
             }
             else
             {
-                veterinario = new Veterinario ();
+                veterinario = new Veterinario();
             }
             if (veterinario == null)
             {
@@ -40,11 +40,11 @@ namespace MascotaFeliz.App.Frontend.Pages
 
         public IActionResult OnPost()
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
-            if (veterinario.Id>0)
+            if (veterinario.Id > 0)
             {
                 veterinario = _repoVeterinario.UpdateVeterinario(veterinario);
             }

@@ -2,33 +2,38 @@
 @model MascotaFeliz.App.Frontend.Pages.ListaDuenosModel
 @{
 }
-<h1>Lista de Dueños</h1>
-<table class = "table">
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="~/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+<h1 style="text-shadow: 4px 4px 2px rgba(50, 168, 82,0.45);">Listado de Dueños</h1>
+<table class="blueTable">
+    <tr>
+        <th>Identificación</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+
+    </tr>
     @foreach (var dueno in Model.listaDuenos)
     {
-
-    <tr>
-        
-        <td>@dueno.Nombres</td>
-        <td>@dueno.Apellidos</td>
-        <td>@dueno.Direccion</td>
-        <td>@dueno.Telefono</td>
-        <td>@dueno.Correo</td>
-
-        <td>
-            <a class = "btn btn-primary table-btn" asp-page="./DetalleDuenos" asp-route-duenoId="@dueno.Id">
-            Detalle Dueno
-            </a>  
-                    
-        </td>
-        <td>
-            <a class = "btn btn-primary table-btn" asp-page="./EditarDuenos" asp-route-duenoId="@dueno.Id">
-            Editar Dueno
-            </a>  
-                    
-        </td>
-    </tr>
-    
+        <tr>
+            <td>@dueno.Id</td>
+            <td>@dueno.Nombres</td>
+            <td>@dueno.Apellidos</td>
+            <td width="300" nowrap>
+                <a class="btn btn-info btn-sm" asp-page="./DetallesDuenos" asp-route-duenoId="@dueno.Id"><i class="fas fa-address-card"></i> Detalle Dueño</a>
+                <a class="btn btn-success btn-sm" asp-page="./EditarDuenos" asp-route-duenoId="@dueno.Id"><i class="far fa-id-card"></i> Editar Dueño</a>
+            </td>
+        </tr>
     }
 </table>
-<a class = "btn btn-primary table-btn" asp-page="./EditarDuenos" class= "btn-default">Adicionar Dueño</a>
+<p></p>
+<a class = "btn btn-info active" asp-page="./EditarDuenos" ><i class="fas fa-user"></i>  Adicionar Dueño</a>
+
+</body>
+</html>

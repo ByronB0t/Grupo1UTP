@@ -7,19 +7,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using MascotaFeliz.App.Dominio;
 using MascotaFeliz.App.Persistencia;
 
-
 namespace MascotaFeliz.App.Frontend.Pages
 {
     public class EditarDuenosModel : PageModel
     {
         private readonly IRepositorioDueno _repoDueno;
         [BindProperty]
-        public Dueno dueno {get;set;}
-        
+        public Dueno dueno { get; set; }
+
         public EditarDuenosModel()
         {
             this._repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         }
+        
         public IActionResult OnGet(int? duenoId)
         {
             if (duenoId.HasValue)
@@ -28,7 +28,7 @@ namespace MascotaFeliz.App.Frontend.Pages
             }
             else
             {
-                dueno = new Dueno ();
+                dueno = new Dueno();
             }
             if (dueno == null)
             {
@@ -40,11 +40,11 @@ namespace MascotaFeliz.App.Frontend.Pages
 
         public IActionResult OnPost()
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
-            if (dueno.Id>0)
+            if (dueno.Id > 0)
             {
                 dueno = _repoDueno.UpdateDueno(dueno);
             }

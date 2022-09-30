@@ -32,10 +32,10 @@ namespace MascotaFeliz.App.Persistencia
 
         public void DeleteVeterinario(int idVeterinario)
         {
-            var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(d => d.Id == idVeterinario);
-            if (veterinarioEncontrado == null)
+            var VeterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(d => d.Id == idVeterinario);
+            if (VeterinarioEncontrado == null)
                 return;
-            _appContext.Veterinarios.Remove(veterinarioEncontrado);
+            _appContext.Veterinarios.Remove(VeterinarioEncontrado);
             _appContext.SaveChanges();
         }
 
@@ -76,7 +76,7 @@ namespace MascotaFeliz.App.Persistencia
                 veterinarioEncontrado.Apellidos = veterinario.Apellidos;
                 veterinarioEncontrado.Direccion = veterinario.Direccion;
                 veterinarioEncontrado.Telefono = veterinario.Telefono;
-                veterinarioEncontrado.TarjetaProfesional = veterinario.TarjetaProfesional;
+                veterinarioEncontrado.TarjetaProfesional = veterinario.TarjetaProfesional; 
                 _appContext.SaveChanges();
             }
             return veterinarioEncontrado;
