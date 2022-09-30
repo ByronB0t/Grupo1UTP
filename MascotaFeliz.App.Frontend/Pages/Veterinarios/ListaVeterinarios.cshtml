@@ -2,38 +2,33 @@
 @model MascotaFeliz.App.Frontend.Pages.ListaVeterinariosModel
 @{
 }
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="~/css/style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-</head>
-<body>
-<h1 style="text-shadow: 4px 4px 2px rgba(50, 168, 82,0.45);">Listado de Veterinarios</h1>
-
-<table class="blueTable">
-     <tr>
-        <th>Cedula</th>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-    </tr>
+<h1>Lista de Veterinarios</h1>
+<table class = "table">
     @foreach (var veterinario in Model.listaVeterinarios)
     {
-        <tr>
-            <td>@veterinario.Id</td>
-            <td>@veterinario.Nombres</td>
-            <td>@veterinario.Apellidos</td>
-            
-            <td>
-                <a class="btn btn-info btn-sm" asp-page="./DetallesVeterinarios" asp-route-veterinarioId="@veterinario.Id"><i class="fas fa-address-card"></i> Detalle Veterinario</a>
-                <a class="btn btn-success btn-sm" asp-page="./EditarVeterinarios" asp-route-veterinarioId="@veterinario.Id"><i class="far fa-id-card"></i> Editar Veterinario</a>
-            </td>
-        </tr>
+
+    <tr>
+        <td>@veterinario.Nombres</td>
+        <td>@veterinario.Apellidos</td>
+        <td>@veterinario.Direccion</td>
+        <td>@veterinario.Telefono</td>
+        <td>@veterinario.TarjetaProfesional</td>
+        
+
+        <td>
+            <a class = "btn btn-primary table-btn" asp-page="./DetalleVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+            Detalle Veterinario
+            </a>  
+                    
+       </td>
+        <td>
+            <a class = "btn btn-primary table-btn" asp-page="./EditarVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+            Editar Veterinario
+            </a>  
+                    
+        </td>
+    </tr>
+    
     }
 </table>
-<p></p>
-<a class = "btn btn-info active" asp-page="./EditarVeterinarios" ><i class="fas fa-user"></i> Adicionar Veterinario</a>
-</body>
-</html>
+<a class = "btn btn-primary table-btn" asp-page="./EditarVeterinarios" class= "btn-default">Adicionar Veterinario</a>
