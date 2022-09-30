@@ -17,7 +17,6 @@ namespace MascotaFeliz.App.Persistencia
         /// Inyeccion de dependencias para indicar el contexto a utilizar
         /// </summary>
         /// <param name="appContext"></param>//
-        
         public RepositorioMascota(AppContext appContext)
         {
             _appContext = appContext;
@@ -46,8 +45,13 @@ namespace MascotaFeliz.App.Persistencia
 /*
        public IEnumerable<Mascota> GetAllMascotas()
         {
+<<<<<<< Updated upstream
             return GetAllMascotas_();
         }*/
+=======
+            return _appContext.Mascotas.Include("Dueno").Include("Veterinario").Include("Historia");
+        }
+>>>>>>> Stashed changes
 
         public IEnumerable<Mascota> GetMascotasPorFiltro(string filtro)
         {
@@ -62,11 +66,6 @@ namespace MascotaFeliz.App.Persistencia
             return mascotas;
         }
 
-        public IEnumerable<Mascota> GetAllMascotas_()
-        {
-            return _appContext.Mascotas;
-        }
-
         public Mascota GetMascota(int idMascota)
         {
             return _appContext.Mascotas.Include("Dueno").Include("Veterinario").Include("Historia").FirstOrDefault(d => d.Id == idMascota);
@@ -75,6 +74,7 @@ namespace MascotaFeliz.App.Persistencia
 
        /* public Mascota GetMascota(int idMascota)
         {
+<<<<<<< Updated upstream
             return _appContext.Mascotas.FirstOrDefault(d => d.Id == idMascota);
         }*/
 
@@ -82,6 +82,31 @@ namespace MascotaFeliz.App.Persistencia
         {
         var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
             if (mascotaEncontrado != null)
+=======
+            var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(d => d.Id == mascota.Id);
+            if (mascotaEncontrado != null)
+            {
+                mascotaEncontrado.Nombre = mascota.Nombre;
+                mascotaEncontrado.Color = mascota.Color;
+                mascotaEncontrado.Especie = mascota.Especie;
+                mascotaEncontrado.Raza = mascota.Raza;
+                mascotaEncontrado.Dueno = mascota.Dueno;
+                mascotaEncontrado.Veterinario = mascota.Veterinario;
+                mascotaEncontrado.Historia = mascota.Historia;
+                
+                _appContext.SaveChanges();
+            }
+            return mascotaEncontrado;
+        }  
+
+        public Veterinario AsignarVeterinario(int idMascota, int idVeterinario)
+        {
+            var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
+            if (mascotaEncontrado != null)
+            {
+                var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(v => v.Id == idVeterinario);
+                if (veterinarioEncontrado != null)
+>>>>>>> Stashed changes
                 {
                     var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(v => v.Id == idVeterinario);
                     if (veterinarioEncontrado != null)
@@ -90,16 +115,30 @@ namespace MascotaFeliz.App.Persistencia
                         _appContext.SaveChanges();
                     }
                 return veterinarioEncontrado;
+<<<<<<< Updated upstream
                 }
         return null;
         }
+=======
+            }
+            return null;
+        }   
+>>>>>>> Stashed changes
 
 
 
        public Dueno AsignarDueno(int idMascota, int idDueno)
         {
+<<<<<<< Updated upstream
         var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
             if (mascotaEncontrado != null)
+=======
+            var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
+            if (mascotaEncontrado != null)
+            {
+                var duenoEncontrado = _appContext.Duenos.FirstOrDefault(v => v.Id == idDueno);
+                if (duenoEncontrado != null)
+>>>>>>> Stashed changes
                 {
                     var duenoEncontrado = _appContext.Duenos.FirstOrDefault(v => v.Id == idDueno);
                     if (duenoEncontrado != null)
@@ -108,9 +147,15 @@ namespace MascotaFeliz.App.Persistencia
                         _appContext.SaveChanges();
                     }
                 return duenoEncontrado;
+<<<<<<< Updated upstream
                 }
         return null;
         }
+=======
+            }
+            return null;
+        }   
+>>>>>>> Stashed changes
 
         public Historia AsignarHistoria(int idMascota, int idHistoria)
         {
@@ -139,10 +184,15 @@ namespace MascotaFeliz.App.Persistencia
                 mascotaEncontrado.Raza = mascota.Raza;
                 _appContext.SaveChanges();
             }
+<<<<<<< Updated upstream
             return mascotaEncontrado;
         }  
        
        
 
+=======
+            return null;
+        }
+>>>>>>> Stashed changes
     }
 }

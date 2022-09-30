@@ -17,7 +17,6 @@ namespace MascotaFeliz.App.Persistencia
         /// Inyeccion de dependencias para indicar el contexto a utilizar
         /// </summary>
         /// <param name="appContext"></param>//
-        
         public RepositorioHistoria(AppContext appContext)
         {
             _appContext = appContext;
@@ -39,8 +38,9 @@ namespace MascotaFeliz.App.Persistencia
             _appContext.SaveChanges();
         }
 
-       public IEnumerable<Historia> GetAllHistorias()
+        public IEnumerable<Historia> GetAllHistorias()
         {
+<<<<<<< Updated upstream
             return GetAllHistorias_();
         }
 
@@ -67,16 +67,46 @@ namespace MascotaFeliz.App.Persistencia
             return _appContext.Historias.FirstOrDefault(d => d.Id == idHistoria);
         }
 
+=======
+            return _appContext.Historias; 
+        }
+
+        IEnumerable<VisitaPyP> IRepositorioHistoria.GetVisitasHistoria(int idHistoria)
+        {
+            var historia = _appContext.Historias.Where(h => h.Id == idHistoria)
+                                                .Include(h => h.VisitasPyP)
+                                                .FirstOrDefault();
+            return historia.VisitasPyP;
+        }
+
+        public Historia GetHistoria(int idHistoria)
+        {
+            return _appContext.Historias.Include(a => a.VisitasPyP).FirstOrDefault(d => d.Id == idHistoria);
+        }
+
+>>>>>>> Stashed changes
         public Historia UpdateHistoria(Historia historia)
         {
             var historiaEncontrado = _appContext.Historias.FirstOrDefault(d => d.Id == historia.Id);
             if (historiaEncontrado != null)
             {
                 historiaEncontrado.FechaInicial = historia.FechaInicial;
+<<<<<<< Updated upstream
                 //historiaEncontrado.VisitaPyP = historia.Color;
+=======
+                historiaEncontrado.VisitasPyP = historia.VisitasPyP;
+
+>>>>>>> Stashed changes
                 _appContext.SaveChanges();
             }
             return historiaEncontrado;
-        }     
+        }
+
+        
+        
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 }

@@ -1483,6 +1483,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "MascotaFeliz.App.Consola/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "MascotaFeliz.App.Dominio": "1.0.0",
+          "MascotaFeliz.App.Persistencia": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MascotaFeliz.App.Consola.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MascotaFeliz.App.Consola.dll": {}
+        }
+      },
       "MascotaFeliz.App.Dominio/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -5720,6 +5734,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "MascotaFeliz.App.Consola/1.0.0": {
+      "type": "project",
+      "path": "../MascotaFeliz.App.Consola/MascotaFeliz.App.Consola.csproj",
+      "msbuildProject": "../MascotaFeliz.App.Consola/MascotaFeliz.App.Consola.csproj"
+    },
     "MascotaFeliz.App.Dominio/1.0.0": {
       "type": "project",
       "path": "../MascotaFeliz.App.Dominio/MascotaFeliz.App.Dominio.csproj",
@@ -5733,16 +5752,22 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "MascotaFeliz.App.Consola >= 1.0.0",
       "MascotaFeliz.App.Dominio >= 1.0.0",
       "MascotaFeliz.App.Persistencia >= 1.0.0"
     ]
   },
   "packageFolders": {
+<<<<<<< Updated upstream
     "C:\\Users\\usuario\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
+>>>>>>> Stashed changes
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Mascotas\\mascotafeliz.app\\MascotaFeliz.App.Frontend\\MascotaFeliz.App.Frontend.csproj",
       "projectName": "MascotaFeliz.App.Frontend",
       "projectPath": "C:\\Mascotas\\mascotafeliz.app\\MascotaFeliz.App.Frontend\\MascotaFeliz.App.Frontend.csproj",
@@ -5751,6 +5776,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "C:\\Mascotas\\MascotaFeliz.App\\mascotafeliz.app.frontend\\MascotaFeliz.App.Frontend.csproj",
+      "projectName": "MascotaFeliz.App.Frontend",
+      "projectPath": "C:\\Mascotas\\MascotaFeliz.App\\mascotafeliz.app.frontend\\MascotaFeliz.App.Frontend.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Mascotas\\MascotaFeliz.App\\mascotafeliz.app.frontend\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> Stashed changes
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5761,8 +5796,16 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+<<<<<<< Updated upstream
             "C:\\Mascotas\\mascotafeliz.app\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj": {
               "projectPath": "C:\\Mascotas\\mascotafeliz.app\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj"
+=======
+            "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Consola\\MascotaFeliz.App.Consola.csproj": {
+              "projectPath": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Consola\\MascotaFeliz.App.Consola.csproj"
+            },
+            "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj": {
+              "projectPath": "C:\\Mascotas\\MascotaFeliz.App\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj"
+>>>>>>> Stashed changes
             },
             "C:\\Mascotas\\mascotafeliz.app\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj": {
               "projectPath": "C:\\Mascotas\\mascotafeliz.app\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj"
@@ -5796,7 +5839,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< Updated upstream
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.423\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.420\\RuntimeIdentifierGraph.json"
+>>>>>>> Stashed changes
       }
     }
   }

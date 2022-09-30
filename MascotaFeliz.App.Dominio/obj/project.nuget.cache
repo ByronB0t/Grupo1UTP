@@ -1,11 +1,20 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "Gq4k6qBQyCOnPA3ojI4zcWXUHCgpMgzEIz6o+VK/n9NoKh5uDOhqGXfK3WxIVvGRioI9h+3EL8R8k1Zb2xjG1g==",
+=======
+  "dgSpecHash": "aFVG/EBKfrdI2RZfYNIJvH9iml5ta+lbEPeArDaQ5lI2WSc52VbwNcPIh2pnWgcdxp/82wi9jFJu3oM8Jb8PGg==",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Mascotas\\mascotafeliz.app\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj",
   "expectedPackageFiles": [
+<<<<<<< Updated upstream
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+=======
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+>>>>>>> Stashed changes
   ],
   "logs": []
 }

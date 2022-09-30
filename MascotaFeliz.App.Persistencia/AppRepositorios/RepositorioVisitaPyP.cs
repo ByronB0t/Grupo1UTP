@@ -11,13 +11,17 @@ namespace MascotaFeliz.App.Persistencia
         /// <summary>
         /// Referencia al contexto de VisitaPyP
         /// </summary>
+
+
         private readonly AppContext _appContext;
+
+
         /// <summary>
         /// Metodo Constructor Utiiza 
         /// Inyeccion de dependencias para indicar el contexto a utilizar
         /// </summary>
         /// <param name="appContext"></param>//
-        
+
         public RepositorioVisitaPyP(AppContext appContext)
         {
             _appContext = appContext;
@@ -41,22 +45,10 @@ namespace MascotaFeliz.App.Persistencia
 
        public IEnumerable<VisitaPyP> GetAllVisitasPyP()
         {
-            return GetAllVisitasPyP_();
+            return GetAllVisitaPyPs_();
         }
 
-        /*public IEnumerable<VisitaPyP> GetVisitasPyPPorFiltro(int filtro)
-        {
-            var visitasPyP = GetAllVisitasPyP(); // Obtiene todos los saludos
-            if (visitasPyP != null)  //Si se tienen saludos
-            {
-                if (!Int.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
-                {
-                    visitasPyP = visitasPyP.Where(s => s.Id.Contains(filtro));
-                }
-            }
-            return visitasPyP;
-        }*/
-        public IEnumerable<VisitaPyP> GetAllVisitasPyP_()
+        public IEnumerable<VisitaPyP> GetAllVisitaPyPs_()
         {
             return _appContext.VisitasPyP;
         }
@@ -71,14 +63,16 @@ namespace MascotaFeliz.App.Persistencia
             var visitaPyPEncontrado = _appContext.VisitasPyP.FirstOrDefault(d => d.Id == visitaPyP.Id);
             if (visitaPyPEncontrado != null)
             {
-                visitaPyPEncontrado.Id = visitaPyP.Id;
                 visitaPyPEncontrado.FechaVisita = visitaPyP.FechaVisita;
                 visitaPyPEncontrado.Temperatura = visitaPyP.Temperatura;
+                visitaPyPEncontrado.Peso = visitaPyP.Peso;
                 visitaPyPEncontrado.FrecuenciaRespiratoria = visitaPyP.FrecuenciaRespiratoria;
                 visitaPyPEncontrado.FrecuenciaCardiaca = visitaPyP.FrecuenciaCardiaca;
                 visitaPyPEncontrado.EstadoAnimo = visitaPyP.EstadoAnimo;
-                visitaPyPEncontrado.IdVeterinario = visitaPyP.IdVeterinario;
-                visitaPyPEncontrado.Recomendaciones = visitaPyP.Recomendaciones;                
+                visitaPyPEncontrado.CedulaVeterinario = visitaPyP.CedulaVeterinario;
+                visitaPyPEncontrado.Recomendaciones = visitaPyP.Recomendaciones;
+
+
                 _appContext.SaveChanges();
             }
             return visitaPyPEncontrado;

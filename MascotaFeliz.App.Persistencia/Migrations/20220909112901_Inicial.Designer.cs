@@ -4,14 +4,16 @@ using MascotaFeliz.App.Persistencia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MascotaFeliz.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20220909112901_Inicial")]
+    partial class Inicial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,7 +127,7 @@ namespace MascotaFeliz.App.Persistencia.Migrations
                     b.Property<float>("FrecuenciaCardiaca")
                         .HasColumnType("real");
 
-                    b.Property<float>("FrecuenciaRespitaria")
+                    b.Property<float>("FrecuenciaRespiratoria")
                         .HasColumnType("real");
 
                     b.Property<int?>("HistoriaId")
@@ -191,13 +193,13 @@ namespace MascotaFeliz.App.Persistencia.Migrations
             modelBuilder.Entity("MascotaFeliz.App.Dominio.VisitaPyP", b =>
                 {
                     b.HasOne("MascotaFeliz.App.Dominio.Historia", null)
-                        .WithMany("VisitaPyP")
+                        .WithMany("VisitasPyP")
                         .HasForeignKey("HistoriaId");
                 });
 
             modelBuilder.Entity("MascotaFeliz.App.Dominio.Historia", b =>
                 {
-                    b.Navigation("VisitaPyP");
+                    b.Navigation("VisitasPyP");
                 });
 #pragma warning restore 612, 618
         }

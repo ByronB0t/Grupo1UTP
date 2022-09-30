@@ -2,6 +2,7 @@
 @model MascotaFeliz.App.Frontend.Pages.DetallesVeterinariosModel
 @{
 }
+<<<<<<< Updated upstream
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -24,3 +25,29 @@
 <a asp-page="./Listaveterinarios" class="btn btn-info active"><i class="fas fa-user"></i> Lista de Veterinarios </a>
 </body>
 </html>
+=======
+<h1>Detalles del Veterinario</h1>
+
+<div>
+    Id: @Model.veterinario.Id
+</div>
+<div>
+    Cedula: @Model.veterinario.Cedula
+</div>
+<div>
+    Nombre: @Model.veterinario.Nombres
+</div>
+<div>
+    Apellido: @Model.veterinario.Apellidos
+</div>
+<div>
+    Direccion: @Model.veterinario.Direccion
+</div>
+<div>
+    Telefono: @Model.veterinario.Telefono
+</div>
+<div>
+    Correo: @Model.veterinario.TarjetaProfesional
+</div>
+<a asp-page="./Listaveterinarios" class="btn-default">Lista de Veterinarios </a>
+>>>>>>> Stashed changes
